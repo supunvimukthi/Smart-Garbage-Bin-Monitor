@@ -1,0 +1,94 @@
+.example-card {
+    width: 80%;
+    max-width: 800px;
+    height: 70%;
+    background-color:rgba(255,255,255,0.5)
+  }
+  .examples-card1 {
+    
+    height: 70%;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    background-color:rgba(255,255,255,0.5)
+  }
+  .scroll{
+    overflow-x: scroll;
+  }
+  .divider{
+      border-top-width: 3px;
+  }
+  
+  .example-header-image {
+    background-image: url('http://www.fsgxx.com/images/upfile/20165231538716741.jpg');
+    background-size: cover;
+  }
+  .example-header-image1 {
+    background-image: url('https://vignette.wikia.nocookie.net/minecraftcreepypasta/images/7/7d/Bio-hazard-gas-mask-symbol-9223024.jpg');
+    background-size: cover;
+  }
+  .example-header-image2 {
+    background-image: url('https://thumbs.dreamstime.com/b/map-location-marker-flat-icon-white-generic-folding-nameless-city-map-flat-icon-red-gps-marker-isolated-white-97460808.jpg');
+    background-size: cover;
+  }
+  .example-header-image3 {
+    background-image: url('https://s3.envato.com/files/106288013/garbage-collector-rubbish-bin_ISO_PRVW.jpg');
+    background-size: cover;
+  }
+  .mat-card-title{
+      font-size: 30px;
+  }
+  .mat-card-title1{
+    font-size: 30px;
+}
+  .text-inside{
+      font-size: 50px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-stretch: expanded;
+      text-align: center;
+      padding-top: 100px
+
+  }
+  .transparent{
+      background-color: transparent;
+  }
+  .text-inside1{
+    font-size: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-stretch: expanded;
+    text-align: center;
+    padding-bottom: 20px
+
+}
+.collector{
+    margin-top: 60px;
+   justify-content:center;
+}
+.text-collector{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 20px;
+    color: darkblue
+}
+  .background{
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background:rgba(255,255,255,0.5);
+     background-size: cover;
+      background-image: url(../assets/Background-Color-67.jpg)
+  }
+  .green{
+      color:green;
+  }
+  .red{
+    color:red;
+}

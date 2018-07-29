@@ -1,20 +1,90 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div  class="background scroll">
+  <div class="transparent" *ngFor='let bin of bins;let i = index' >
+    <mat-grid-list cols="1" gutterSize="10px" rowHeight="50px">
+    <mat-card class="examples-card1">
+        <mat-card-header class="header">
+          <mat-card-title class="mat-card-title1"> BIN NO : {{i+1}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+      </mat-card></mat-grid-list>
+<mat-grid-list cols="4" gutterSize="5px" rowHeight="500px">
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Amount Filled</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <br>
+      <mat-divider class="divider" [inset]=true></mat-divider>
+      <mat-card-content>
+          <mat-grid-list cols="2" gutterSize="10" rowHeight="300px">
+              <mat-grid-tile>
+          <p class="text-inside1">
+            {{bin.Distance}} cm</p></mat-grid-tile>
+            <mat-grid-tile>
+            <circle-progress [percent]="(bin.Distance)/125*100" [radius]="60" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="color(bin.Distance)"
+              [innerStrokeColor]="'#C7E596'"   [titleFontSize] ="25" [unitsFontSize] = "25" [showSubtitle]="false" [animation]="true" [animationDuration]="300"></circle-progress></mat-grid-tile>
+            </mat-grid-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image1"></div>
+        <mat-card-title class="mat-card-title">Air Quality </mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <br>
+      <mat-divider class="divider" [inset]=true></mat-divider>
+      <mat-card-content>
+          <p [class.green]="bin.AirQuality<40" [class.red]="bin.AirQuality>40"class="text-inside">
+              {{bin.AirQuality<40?'HEALTHY':'HAZARDOUS'}}
+            </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image2"></div>
+          <mat-card-title class="mat-card-title">Location </mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <br>
+        <mat-divider class="divider" [inset]=true></mat-divider>
+        <mat-card-content>
+            <p class="text-inside">
+                {{bin.Location}}
+              </p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image3"></div>
+            <mat-card-title class="mat-card-title">Last Collector </mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+          </mat-card-header>
+          <br>
+          <mat-divider class="divider" [inset]=false></mat-divider>
+          <mat-card-content>
+            <div *ngFor='let collector of collectors'>
+            <div *ngIf='collector.Id===bin.Collector' class="collector">
+              <p class="text-collector">
+                  Name : {{collector.Name}}
+              </p>
+              <p class="text-collector">
+                  Contact : {{collector.Contact}}
+              </p>
+              <p class="text-collector">
+                  Age : {{collector.Age}}
+              </p></div></div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+</mat-grid-list>
+<mat-divider class="divider" [inset]=false></mat-divider></div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
