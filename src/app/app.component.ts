@@ -19,10 +19,11 @@ export class AppComponent {
   lng: number = 7.809007;
 
   color(distance:number){
-    if((distance/125*100)>90){return "#c00000"}
-    else if((distance/125*100)>70){return "#c04200"}
-    else if((distance/125*100)>50){return "#c08400"}
-    else if((distance/125*100)>30){return "#c0c000"}
+    distance=25-distance;
+    if((distance/25*100)>90){return "#c00000"}
+    else if((distance/25*100)>70){return "#c04200"}
+    else if((distance/25*100)>50){return "#c08400"}
+    else if((distance/25*100)>30){return "#c0c000"}
     else{return "#76c000"}
   }
 

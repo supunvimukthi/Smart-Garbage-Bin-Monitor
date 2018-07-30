@@ -24,7 +24,7 @@
           <p class="text-inside1">
             {{25-bin.Height}} cm</p></mat-grid-tile>
             <mat-grid-tile>
-            <circle-progress [percent]="bin.Height<25?(25-bin.Height)/25*100:0" [radius]="50" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="color(bin.Distance)"
+            <circle-progress [percent]="bin.Height<25?(25-bin.Height)/25*100:0" [radius]="50" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="color(bin.Height)"
               [innerStrokeColor]="'#C7E596'"   [titleFontSize] ="25" [unitsFontSize] = "25" [showSubtitle]="false" [animation]="true" [animationDuration]="300"></circle-progress></mat-grid-tile>
             </mat-grid-list>
       </mat-card-content>
