@@ -14,6 +14,7 @@ import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule } from 'angular4-fusioncharts';
 import {MatDividerModule} from '@angular/material/divider';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { AgmCoreModule } from '@agm/core';
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -39,6 +40,9 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
+    }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD0oeyUX5xqqf1qkJ1zhkuY8ThIR0ejvjY'
     })
   ],
   providers: [],

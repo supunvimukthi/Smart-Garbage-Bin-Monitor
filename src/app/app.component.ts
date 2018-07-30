@@ -15,6 +15,8 @@ export class AppComponent {
   air:String;
   bins:any[];
   collectors:any[];
+  lat: number = 51.678418;
+  lng: number = 7.809007;
 
   color(distance:number){
     if((distance/125*100)>90){return "#c00000"}
@@ -25,16 +27,8 @@ export class AppComponent {
   }
 
   constructor(db: AngularFireDatabase) {
-    db.object('/distance').valueChanges()
-    .subscribe(distance=>{
-        this.distance=distance;
-        this.percent=Number(this.distance)/125*100
-       
-
-        
-    } )
-      
-    db.list('/bins').valueChanges()
+          
+    db.list('/').valueChanges()
       .subscribe(bins=>{
         this.bins=bins;
         

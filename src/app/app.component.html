@@ -1,5 +1,6 @@
 <div  class="background scroll">
   <div class="transparent" *ngFor='let bin of bins;let i = index' >
+    <div *ngIf='bin.Height'>
     <mat-grid-list cols="1" gutterSize="10px" rowHeight="50px">
     <mat-card class="examples-card1">
         <mat-card-header class="header">
@@ -21,9 +22,9 @@
           <mat-grid-list cols="2" gutterSize="10" rowHeight="300px">
               <mat-grid-tile>
           <p class="text-inside1">
-            {{bin.Distance}} cm</p></mat-grid-tile>
+            {{25-bin.Height}} cm</p></mat-grid-tile>
             <mat-grid-tile>
-            <circle-progress [percent]="(bin.Distance)/125*100" [radius]="50" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="color(bin.Distance)"
+            <circle-progress [percent]="bin.Height<25?(25-bin.Height)/25*100:0" [radius]="50" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="color(bin.Distance)"
               [innerStrokeColor]="'#C7E596'"   [titleFontSize] ="25" [unitsFontSize] = "25" [showSubtitle]="false" [animation]="true" [animationDuration]="300"></circle-progress></mat-grid-tile>
             </mat-grid-list>
       </mat-card-content>
@@ -39,8 +40,8 @@
       <br>
       <mat-divider class="divider" [inset]=true></mat-divider>
       <mat-card-content>
-          <p [class.green]="bin.AirQuality<40" [class.red]="bin.AirQuality>40"class="text-inside">
-              {{bin.AirQuality<40?'HEALTHY':'HAZARDOUS'}}
+          <p [class.green]="bin.AirQuality==='Healthy'" [class.red]="bin.AirQuality==='Bad'"class="text-inside">
+              {{bin.AirQuality==='Healthy'?'HEALTHY':'HAZARDOUS'}}
             </p>
       </mat-card-content>
     </mat-card>
@@ -54,10 +55,13 @@
         </mat-card-header>
         <br>
         <mat-divider class="divider" [inset]=true></mat-divider>
-        <mat-card-content>
-            <p class="text-inside">
-                {{bin.Location}}
-              </p>
+        <mat-card-content><br><br>
+                <agm-map [zoom]="16" [latitude]="bin.lat" [longitude]="bin.long">
+                    <agm-marker [latitude]="bin.lat" [longitude]="bin.long">
+                    <agm-info-window>
+                        <strong>{{bin.Location}}</strong>
+                      </agm-info-window></agm-marker>
+                  </agm-map>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -86,5 +90,5 @@
         </mat-card>
       </mat-grid-tile>
 </mat-grid-list>
-<mat-divider class="divider" [inset]=false></mat-divider></div>
+<mat-divider class="divider" [inset]=false></mat-divider></div></div>
 </div>

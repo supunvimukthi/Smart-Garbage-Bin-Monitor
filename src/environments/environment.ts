@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyDa25TLGfo0UZrRTHQm6ZGpaXncXr1v67k",
-    authDomain: "smart-parking-system-24561.firebaseapp.com",
-    databaseURL: "https://smart-parking-system-24561.firebaseio.com",
-    projectId: "smart-parking-system-24561",
-    storageBucket: "smart-parking-system-24561.appspot.com",
-    messagingSenderId: "543179310288"
+    apiKey: "AIzaSyABQAGoWJFd4MYhZVGm7cCeMnxM7ihk2w0",
+    authDomain: "smartbin-c423c.firebaseapp.com",
+    databaseURL: "https://smartbin-c423c.firebaseio.com",
+    projectId: "smartbin-c423c",
+    storageBucket: "smartbin-c423c.appspot.com",
+    messagingSenderId: "961867237068"
   }
 };
 
