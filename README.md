@@ -1,27 +1,20 @@
-# SmartBin
+# Smart-Garbage-Bin-Monitor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Simple angular web app to update data sent from nodemcu fixed on a garbage bin to inform authorities with the percentage filled,location, air qualty inside and the information about the last collector who collected garbage out of that bin. Node mcu transmits data to firebase through the arduino-firebase API and this angular app retrieves real-time data and shows on the web app.
 
-## Development server
+link to angular [web-app](https://smart-bin-project.herokuapp.com/) deployed on heroku.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Hardware on the bin
 
-## Code scaffolding
+- nodemcu to send data to firebase
+- ultrasonic sensor to detect the amount filled
+- MQ-35 sensor to sense the air quality inside the bin
+- piezo sensor to detection of smart bin open.
+- RFID to get data of the last collector
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How to run on local host
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- clone the repository and cd in to project folder
+- run **npm install**
+- then run **ng serve --open**
+- you will have the app up and running on localhost with live update. 
