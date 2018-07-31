@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyABQAGoWJFd4MYhZVGm7cCeMnxM7ihk2w0",
+    apiKey: "Your API KEY",
     authDomain: "smartbin-c423c.firebaseapp.com",
     databaseURL: "https://smartbin-c423c.firebaseio.com",
     projectId: "smartbin-c423c",
